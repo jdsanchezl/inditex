@@ -79,7 +79,7 @@ public class PricesController {
 	@ApiResponses({
 		@ApiResponse(responseCode = "201", description = "Precio creado correctamente", 
 			content = @Content(mediaType = "application/json", schema = @Schema(implementation = Prices.class))),
-		@ApiResponse(responseCode = "400", description = "Solicitud incorrecta"),
+		@ApiResponse(responseCode = "304", description = "Solicitud incorrecta"),
 		@ApiResponse(responseCode = "500", description = "Error interno del servidor")
 	})
 	public ResponseEntity<Prices> savePrices(

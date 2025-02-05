@@ -13,11 +13,13 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
+import java.util.Collections;
 import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
@@ -31,6 +33,8 @@ import org.springframework.web.context.WebApplicationContext;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
+import com.inditex.application.service.PricesService;
+import com.inditex.application.service.impl.PricesServiceImpl;
 import com.inditex.domain.model.Prices;
 
 @SpringBootTest
@@ -40,6 +44,8 @@ public class InditexApplicationTests {
 
 	@Autowired
 	private WebApplicationContext context;
+	
+	private PricesService pricesService = Mockito.mock(PricesServiceImpl.class);
 
 	@BeforeEach
 	public void setup() {
@@ -168,4 +174,31 @@ public class InditexApplicationTests {
 		assertNotNull(found.getPricesId());
 		assertEquals(new BigDecimal("60"), found.getPrice());
 	}
+	
+	@Test
+	@DisplayName("Obtener precio - Error interno (500)")
+	public void testGetPriceInternalServerError() throws Exception {
+	    this.mockMvc.perform(MockMvcRequestBuilders.get("/prices/2020/35455/1")
+	            .contentType(MediaType.APPLICATION_JSON)
+	            .accept(MediaType.APPLICATION_JSON))
+	        .andDo(print())
+	        .andExpect(status().isInternalServerError());
+	}
+	
+	@Test
+	@DisplayName("Salvar nuevo precio - Error interno (500)")
+	public void testPostPriceBadRequest() throws Exception {
+	    Prices prices = new Prices();
+
+	    ObjectMapper mapper = new ObjectMapper();
+	    String requestJson = mapper.writeValueAsString(prices);
+
+	    this.mockMvc.perform(MockMvcRequestBuilders.post("/prices/")
+	            .content(requestJson)
+	            .contentType(MediaType.APPLICATION_JSON)
+	            .accept(MediaType.APPLICATION_JSON))
+	        .andDo(print())
+	        .andExpect(status().isInternalServerError());
+	}
+
 }
