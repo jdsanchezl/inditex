@@ -159,7 +159,7 @@ public class InditexApplicationTests {
 		MvcResult result = this.mockMvc
 				.perform(MockMvcRequestBuilders.post("/prices/").content(requestJson)
 						.contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON))
-				.andDo(print()).andExpect(status().isOk()).andReturn();
+				.andDo(print()).andExpect(status().isCreated()).andReturn();
 
 		ObjectMapper mapperReturn = new ObjectMapper();
 

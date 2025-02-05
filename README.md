@@ -117,12 +117,6 @@ La documentación de la API está disponible a través de Swagger OpenAPI. Puede
 http://localhost:8080/swagger/swagger-ui/index.html
 ```
 
-Si has configurado un CSS personalizado para Swagger, puedes verificar que se está aplicando correctamente accediendo a:
-
-```bash
-http://localhost:8080/inditex/swagger-ui.css
-```
-
 ## Ejemplos de Solicitudes
 
 ###### **1. Consultar todos los precios**
