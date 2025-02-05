@@ -10,9 +10,9 @@ Este proyecto consiste en una API desarrollada en **Spring Boot** para gestionar
 - [Requisitos Previos](#requisitos-previos)
 - [Instalación y Ejecución](#instalación-y-ejecución)
 - [Ejecución con Docker](#ejecución-con-docker)
-- [Configuración de Base de Datos](#configuración-de-base-de-datos)
+- [Configuración de la Base de Datos](#configuración-de-la-base-de-datos)
 - [Documentación de la API](#documentación-de-la-api)
-- [Cobertura de Código](#cobertura_de_codigo)
+- [Cobertura de Código](#cobertura-de-código)
 - [Ejemplos de Solicitudes](#ejemplos-de-solicitudes)
 
 ## Introducción
