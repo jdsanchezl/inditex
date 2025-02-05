@@ -12,7 +12,7 @@ Este proyecto consiste en una API desarrollada en **Spring Boot** para gestionar
 - [Ejecución con Docker](#ejecución-con-docker)
 - [Configuración de Base de Datos](#configuración-de-base-de-datos)
 - [Documentación de la API](#documentación-de-la-api)
-- [Test Coverage](#test-coverage)
+- [Cobertura de Código](#cobertura_de_codigo)
 - [Ejemplos de Solicitudes](#ejemplos-de-solicitudes)
 
 ## Introducción
