@@ -121,7 +121,7 @@ http://localhost:8080/swagger/swagger-ui/index.html
 
 ## Cobertura de Código
 
-El proyecto utiliza **Jacoco** para generar informes de cobertura de código. Actualmente, se ha alcanzado una cobertura de aproximadamente **70%**, lo cual es considerado aceptable para un proyecto nuevo. La cobertura puede ser mejorada a medida que se agreguen más pruebas unitarias y de integración.
+El proyecto utiliza **Jacoco** para generar informes de cobertura de código. Actualmente, se ha alcanzado una cobertura cercana al **80%**, lo cual es considerado aceptable para un proyecto nuevo. La cobertura puede ser mejorada a medida que se agreguen más pruebas unitarias y de integración ademas de más historias de usuario.
 
 El informe de cobertura se genera al ejecutar las pruebas y se puede consultar en el directorio `target/site/jacoco/index.html` después de construir el proyecto.
 
