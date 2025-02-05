@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="002" author="your_name">
+        <!-- Insert para la tabla BRAND -->
+        <insert tableName="BRAND">
+            <column name="BRAND_NAME" value="ZARA"/>
+        </insert>
+
+        <!-- Insert para la tabla PRODUCT -->
+        <insert tableName="PRODUCT">
+            <column name="PRODUCT_ID" value="35455"/>
+            <column name="PRODUCT_NAME" value="TEST"/>
+        </insert>
+
+        <!-- Insert para la tabla PRICES -->
+        <insert tableName="PRICES">
+            <column name="PRICE" value="35.50"/>
+            <column name="PRICE_LIST" value="1"/>
+            <column name="PRIORITY" value="0"/>
+            <column name="BRAND_ID" value="1"/>
+            <column name="END_DATE" value="2020-12-31 23:59:59"/>
+            <column name="PRODUCT_ID" value="35455"/>
+            <column name="START_DATE" value="2020-06-14 00:00:00"/>
+            <column name="CURR" value="EUR"/>
+        </insert>
+
+        <insert tableName="PRICES">
+            <column name="PRICE" value="25.45"/>
+            <column name="PRICE_LIST" value="2"/>
+            <column name="PRIORITY" value="1"/>
+            <column name="BRAND_ID" value="1"/>
+            <column name="END_DATE" value="2020-06-14 18:30:00"/>
+            <column name="PRODUCT_ID" value="35455"/>
+            <column name="START_DATE" value="2020-06-14 15:00:00"/>
+            <column name="CURR" value="EUR"/>
+        </insert>
+
+        <insert tableName="PRICES">
+            <column name="PRICE" value="30.50"/>
+            <column name="PRICE_LIST" value="3"/>
+            <column name="PRIORITY" value="1"/>
+            <column name="BRAND_ID" value="1"/>
+            <column name="END_DATE" value="2020-06-15 11:00:00"/>
+            <column name="PRODUCT_ID" value="35455"/>
+            <column name="START_DATE" value="2020-06-15 00:00:00"/>
+            <column name="CURR" value="EUR"/>
+        </insert>
+
+        <insert tableName="PRICES">
+            <column name="PRICE" value="38.95"/>
+            <column name="PRICE_LIST" value="4"/>
+            <column name="PRIORITY" value="1"/>
+            <column name="BRAND_ID" value="1"/>
+            <column name="END_DATE" value="2020-12-31 23:59:59"/>
+            <column name="PRODUCT_ID" value="35455"/>
+            <column name="START_DATE" value="2020-06-15 16:00:00"/>
+            <column name="CURR" value="EUR"/>
+        </insert>
+
+    </changeSet>
+</databaseChangeLog>

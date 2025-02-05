@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="001" author="your_name">
+        <createTable tableName="BRAND">
+            <column name="BRAND_ID" type="INT" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="BRAND_NAME" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="PRODUCT">
+            <column name="PRODUCT_ID" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="PRODUCT_NAME" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="PRICES">
+            <column name="PRICES_ID" type="INT" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="PRICE" type="NUMERIC(10,2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PRICE_LIST" type="INT"/>
+            <column name="PRIORITY" type="INT"/>
+            <column name="BRAND_ID" type="INT">
+                <constraints nullable="false" foreignKeyName="fk_prices_brand" references="BRAND(BRAND_ID)"/>
+            </column>
+            <column name="END_DATE" type="TIMESTAMP"/>
+            <column name="PRODUCT_ID" type="INT">
+                <constraints nullable="false" foreignKeyName="fk_prices_product" references="PRODUCT(PRODUCT_ID)"/>
+            </column>
+            <column name="START_DATE" type="TIMESTAMP"/>
+            <column name="CURR" type="VARCHAR(50)"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

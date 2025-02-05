@@ -1,0 +1,11 @@
+com\inditex\infrastructure\adapter\PricesController.class
+com\inditex\application\service\PricesService.class
+com\inditex\domain\model\Product.class
+com\inditex\domain\model\Prices.class
+com\inditex\domain\model\Brand.class
+com\inditex\domain\repository\PricesRepository.class
+com\inditex\config\SwaggerConfig.class
+com\inditex\application\service\impl\PricesServiceImpl.class
+com\inditex\infrastructure\adapter\repository\PricesJpaRepository.class
+com\inditex\InditexApplication.class
+com\inditex\infrastructure\adapter\repository\PricesJpaCrudRepository.class
