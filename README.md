@@ -12,6 +12,7 @@ Este proyecto consiste en una API desarrollada en **Spring Boot** para gestionar
 - [Ejecución con Docker](#ejecución-con-docker)
 - [Configuración de Base de Datos](#configuración-de-base-de-datos)
 - [Documentación de la API](#documentación-de-la-api)
+- [Test Coverage](#test-coverage)
 - [Ejemplos de Solicitudes](#ejemplos-de-solicitudes)
 
 ## Introducción
@@ -47,6 +48,7 @@ La API está dividida en tres capas principales:
 - **H2 Database** (base de datos en memoria para entornos de desarrollo y prueba)
 - **Docker** (para contenedores de la aplicación)
 - **Swagger OpenAPI** (para la documentación de la API)
+- **JaCoCo** (para medición de cobertura de código)
 
 ## Requisitos Previos
 
@@ -59,7 +61,7 @@ La API está dividida en tres capas principales:
 ###### **1. Clona el repositorio:**
    
 ```bash
-   git clone https://github.com/juanda2984/inditex.git
+git clone https://github.com/juanda2984/inditex.git
 ```
 ###### **2. Navega al directorio del proyecto:**
 
@@ -116,6 +118,12 @@ La documentación de la API está disponible a través de Swagger OpenAPI. Puede
 ```bash
 http://localhost:8080/swagger/swagger-ui/index.html
 ```
+
+## Cobertura de Código
+
+El proyecto utiliza **Jacoco** para generar informes de cobertura de código. Actualmente, se ha alcanzado una cobertura de aproximadamente **70%**, lo cual es considerado aceptable para un proyecto nuevo. La cobertura puede ser mejorada a medida que se agreguen más pruebas unitarias y de integración.
+
+El informe de cobertura se genera al ejecutar las pruebas y se puede consultar en el directorio `target/site/jacoco/index.html` después de construir el proyecto.
 
 ## Ejemplos de Solicitudes
 
